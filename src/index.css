@@ -152,9 +152,13 @@ p { margin: 0; }
 .faq-item.open .faq-answer p { padding: 0 30px 24px 0; }
 .blog-grid { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); margin-bottom: 28px; }
 .blog-card { display: block; }
-.image-placeholder { align-items: flex-end; background: linear-gradient(140deg, #d7edf7, #8db7ca); border-radius: var(--r-md); color: var(--navy-900); display: flex; height: 160px; justify-content: space-between; padding: 14px; }
+.image-placeholder { align-items: flex-end; background: linear-gradient(140deg, #d7edf7, #8db7ca); border-radius: var(--r-md); color: var(--navy-900); display: flex; height: 160px; justify-content: space-between; overflow: hidden; padding: 14px; position: relative; }
+.image-placeholder::after { background: linear-gradient(to top, rgba(11,11,56,.58), transparent 65%); content: ''; inset: 0; position: absolute; }
 .image-placeholder.alt { background: linear-gradient(140deg, #e1eef2, #5b98b2); }
-.image-placeholder span { font: 600 10px var(--font-head); letter-spacing: .12em; }
+.image-placeholder img { height: 100%; inset: 0; object-fit: cover; position: absolute; width: 100%; }
+.image-placeholder span, .image-placeholder svg { position: relative; z-index: 1; }
+.image-placeholder span { color: var(--white); font: 600 10px var(--font-head); letter-spacing: .12em; }
+.image-placeholder svg { color: var(--white); }
 .blog-card h3 { font-size: 18px; line-height: 1.35; margin: 14px 0 7px; }
 .blog-card small { color: var(--ink-500); font-size: 12px; }
 
