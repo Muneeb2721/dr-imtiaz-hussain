@@ -30,11 +30,13 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; color: var(--ink-900); background: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+body { margin: 0; color: var(--ink-900); background: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
 button, input, textarea, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--cyan-400); outline-offset: 3px; }
 
 .container { width: min(1200px, calc(100% - 48px)); margin: 0 auto; position: relative; z-index: 1; }
 .section { padding: 96px 0; position: relative; overflow: hidden; }
@@ -202,12 +204,22 @@ p { margin: 0; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-@media (max-width: 1023px) {
-  .desktop-nav { gap: 14px; }
+@media (max-width: 1199px) {
+  .site-header { padding-left: 32px; padding-right: 32px; }
+  .desktop-nav { gap: 16px; }
   .desktop-nav a { font-size: 12px; }
-  .condition-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { gap: 52px; }
+  .booking-grid { gap: 56px; }
+}
+@media (max-width: 1023px) {
+  .condition-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-window { grid-template-columns: repeat(2, 1fr); }
+  .reviews-window .review-card:nth-child(3) { display: none; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .menu-button { align-items: center; display: inline-flex; justify-content: center; }
 }
 @media (max-width: 700px) {
   .container { width: min(100% - 32px, 560px); }
@@ -250,12 +262,33 @@ p { margin: 0; }
   .blog-grid { gap: 12px; }
   .image-placeholder { height: 130px; }
   .booking-form { padding: 22px; }
+  .booking-actions .button { flex: 1 1 210px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .footer-grid { gap: 36px 24px; grid-template-columns: 1fr 1fr; }
   .footer-intro { grid-column: 1 / -1; }
   .footer-bottom { align-items: flex-start; flex-direction: column; gap: 18px; }
   .footer-links { flex-wrap: wrap; gap: 12px 18px; }
   .floating-whatsapp { bottom: 16px; right: 16px; }
+}
+@media (max-width: 560px) {
+  .container { width: min(100% - 24px, 480px); }
+  .section { padding: 56px 0; }
+  .site-header { padding: 0 12px; }
+  .brand { font-size: 14px; gap: 8px; }
+  .brand-mark { height: 34px; width: 34px; }
+  .hero { min-height: 680px; padding-top: 104px; }
+  .hero h1 { font-size: 32px; }
+  .hero-copy { font-size: 16px; }
+  .trust-row { max-width: 250px; }
+  .reviews-window { grid-template-columns: 1fr; }
+  .reviews-window .review-card:nth-child(2) { display: none; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-card h3 { font-size: 19px; }
+  .booking-actions { align-items: stretch; flex-direction: column; }
+  .booking-actions .button { flex-basis: auto; width: 100%; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-intro { grid-column: auto; }
+  .hours-row { max-width: 250px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; }
