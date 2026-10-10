@@ -60,14 +60,14 @@ p { margin: 0; }
 .button-outline { color: var(--blue-600); border: 1px solid var(--blue-600); background: transparent; }
 .button-outline:hover { color: var(--white); background: var(--blue-600); }
 
-.site-header { align-items: center; display: flex; height: 78px; justify-content: space-between; left: 0; padding: 0 max(24px, calc((100vw - 1200px) / 2)); position: fixed; right: 0; top: 0; transition: background-color 200ms ease, box-shadow 200ms ease; z-index: 50; color: var(--white); }
+.site-header { align-items: center; display: flex; height: 78px; justify-content: space-between; left: 0; max-width: 100%; padding: 0 max(24px, calc((100vw - 1200px) / 2)); position: fixed; right: 0; top: 0; transition: background-color 200ms ease, box-shadow 200ms ease; width: 100%; z-index: 50; color: var(--white); }
 .site-header.is-scrolled { background: rgba(11, 11, 56, .96); box-shadow: 0 2px 14px rgba(11,11,56,.12); backdrop-filter: blur(12px); }
-.brand { align-items: center; display: inline-flex; gap: 10px; font: 600 16px var(--font-head); white-space: nowrap; }
+.brand { align-items: center; display: inline-flex; gap: 10px; font: 600 16px var(--font-head); min-width: 0; white-space: nowrap; }
 .brand-mark { align-items: center; background: var(--blue-600); border-radius: 50%; color: var(--white); display: inline-flex; font: 700 13px var(--font-head); height: 38px; justify-content: center; width: 38px; }
 .desktop-nav { align-items: center; display: flex; gap: 25px; }
 .desktop-nav a { color: rgba(255,255,255,.78); font: 500 13px var(--font-head); transition: color 150ms ease; }
 .desktop-nav a:hover { color: var(--white); }
-.menu-button { background: none; border: 0; color: var(--white); display: none; min-height: 44px; min-width: 44px; }
+.menu-button { background: none; border: 0; color: var(--white); display: none; flex: 0 0 44px; min-height: 44px; min-width: 44px; }
 .menu-overlay, .mobile-panel { display: none; }
 
 .hero { align-items: center; display: flex; min-height: 720px; padding-top: 130px; text-align: center; }
@@ -274,8 +274,9 @@ p { margin: 0; }
   .container { width: min(100% - 24px, 480px); }
   .section { padding: 56px 0; }
   .site-header { padding: 0 12px; }
-  .brand { font-size: 14px; gap: 8px; }
-  .brand-mark { height: 34px; width: 34px; }
+  .brand { font-size: 14px; gap: 8px; max-width: calc(100% - 52px); }
+  .brand > span:last-child { overflow: hidden; text-overflow: ellipsis; }
+  .brand-mark { flex: 0 0 34px; height: 34px; width: 34px; }
   .hero { min-height: 680px; padding-top: 104px; }
   .hero h1 { font-size: 32px; }
   .hero-copy { font-size: 16px; }
