@@ -18,6 +18,8 @@ import {
   X,
   Youtube,
 } from 'lucide-react';
+import pilesTreatmentImg from './assets/images/piles_treatment.jpg';
+import laparoscopicSurgeryImg from './assets/images/laparoscopic_surgery.jpg';
 
 type Review = { name: string; text: string };
 
@@ -162,7 +164,7 @@ function App() {
         </section>
 
         <section className="section faq-blog" id="blog">
-          <div className="container faq-blog-grid"><div><div className="section-heading reveal"><p className="eyebrow">NEED TO KNOW</p><h2>Common questions</h2></div><div className="faq-list">{faqs.map(([question, answer], index) => <div className={`faq-item ${openFaq === index ? 'open' : ''}`} key={question}><button onClick={() => setOpenFaq(openFaq === index ? -1 : index)}><span>{question}</span>{openFaq === index ? <Minus size={19} /> : <Plus size={19} />}</button><div className="faq-answer"><p>{answer}</p></div></div>)}</div></div><div className="blog-column"><div className="section-heading reveal"><p className="eyebrow">INSIGHTS &amp; GUIDANCE</p><h2>From the blog</h2></div><div className="blog-grid"><a className="blog-card" href="#blog"><div className="image-placeholder"><img src="/images/piles_treatment.jfif" alt="Piles treatment guidance" loading="lazy" /><span></span><ArrowUpRight size={18} /></div><h3>Understanding your options for piles treatment</h3><small>Patient guide · 5 min read</small></a><a className="blog-card" href="#blog"><div className="image-placeholder alt"><img src="/images/laparoscopic_surgery.jfif" alt="Laparoscopic surgery guidance" loading="lazy" /><span></span><ArrowUpRight size={18} /></div><h3>What to expect from laparoscopic surgery</h3><small>Patient guide · 4 min read</small></a></div><a className="button button-outline" href="#blog">View all posts <ArrowRight size={17} /></a></div></div>
+          <div className="container faq-blog-grid"><div><div className="section-heading reveal"><p className="eyebrow">NEED TO KNOW</p><h2>Common questions</h2></div><div className="faq-list">{faqs.map(([question, answer], index) => <div className={`faq-item ${openFaq === index ? 'open' : ''}`} key={question}><button onClick={() => setOpenFaq(openFaq === index ? -1 : index)}><span>{question}</span>{openFaq === index ? <Minus size={19} /> : <Plus size={19} />}</button><div className="faq-answer"><p>{answer}</p></div></div>)}</div></div><div className="blog-column"><div className="section-heading reveal"><p className="eyebrow">INSIGHTS &amp; GUIDANCE</p><h2>From the blog</h2></div><div className="blog-grid"><a className="blog-card" href="#blog"><div className="image-placeholder"><img src={pilesTreatmentImg} alt="Piles treatment guidance" loading="lazy" /><span></span><ArrowUpRight size={18} /></div><h3>Understanding your options for piles treatment</h3><small>Patient guide · 5 min read</small></a><a className="blog-card" href="#blog"><div className="image-placeholder alt"><img src={laparoscopicSurgeryImg} alt="Laparoscopic surgery guidance" loading="lazy" /><span></span><ArrowUpRight size={18} /></div><h3>What to expect from laparoscopic surgery</h3><small>Patient guide · 4 min read</small></a></div><a className="button button-outline" href="#blog">View all posts <ArrowRight size={17} /></a></div></div>
         </section>
 
         <section className="section booking section-tint" id="booking">
